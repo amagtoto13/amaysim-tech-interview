@@ -1,0 +1,20 @@
+{
+    "about_you": {
+        "firstname": "test",
+        "lastname": "test",
+        "dob": "01011987",
+        "email": "testemail_08112025@gmail.com",
+        "password": "password1!",
+        "phone_number": "0412345678"
+    },
+    "delivery_address": {
+        "default_address": "Level 6, 17-19 Bridge St, SYDNEY NSW 2000"
+    },
+    "payments": {
+        "declined_cc": {
+            "cc_number": "4242424242424242",
+            "cc_expiry_date": "0127",
+            "cvc": "123"
+        }
+    }
+}

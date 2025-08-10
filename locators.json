@@ -1,0 +1,30 @@
+{
+    "locators": {
+        "7_day_sim_plan": {
+            "button_buy_now": "a:has-text('Buy now')"
+        },
+        "cart_page": {
+            "tab_new_number": "[data-testid='number-option-1']",
+            "radio_physical_sim": "input[value='USIM']",
+            "button_checkout": "[data-testid='product-checkout-button']"
+        },
+        "your_details_page": {
+            "radio_new_to_amaysim": "[data-testid='existing-user-no']",
+            "input_firstname": "input[name='firstName']",
+            "input_lastname": "input[name='lastName']",
+            "input_dob": "input[name='dateOfBirth']",
+            "input_email": "input[name='email']",
+            "input_password": "input[name='password']",
+            "input_number": "input[name='contactNumber']",
+            "input_address": "input[placeholder='e.g 123 George St Sydney NSW 2000']",
+            "option_address": "[role='option']",
+            "button_credit_card": "[data-testid='card']",
+            "input_card_number": "[name='number']",
+            "input_expiry_date": "[name='expiry']",
+            "input_security_code": "[name='cvc']",
+            "checkbox_agree_tnc": "[name='acceptTermsAndConditions']",
+            "button_pay_now": "button:has-text('pay now')",
+            "shopping_cart_error": "h4:has-text(\"Our shopping cart isn't working right now…\")"
+        }
+    }
+}
