@@ -4,7 +4,6 @@ class BasePage:
         self.base_url = context.base_url
         self.locators = context.locators
 
-    @staticmethod
     def get_base_url(self):
         return self.base_url
     

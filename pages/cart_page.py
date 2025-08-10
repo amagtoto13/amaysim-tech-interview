@@ -1,8 +1,8 @@
 from pages.base_page import BasePage
 
 class CartPage(BasePage):
-    def __init__(self, page):
-        super().__init__(page)
+    def __init__(self, page, context):
+        super().__init__(page, context)
         self.url = self.get_base_url() + 'mobile/cart/7-day-10gb'
         self.page_name = 'cart_page'
 
@@ -16,7 +16,9 @@ class CartPage(BasePage):
         self.click(self.page_name, 'tab_transfer_your_number')
 
     def choose_physical_sim(self):
-        self.click(self.page_name, 'radio_physical_sim')
+        # self.click(self.page_name, 'radio_physical_sim')
+        locator = self.get_locator(self.page_name, 'radio_physical_sim')
+        self.page.locator(locator).first.click()
     
     def choose_esim(self):
         self.click(self.page_name, 'radio_esim')

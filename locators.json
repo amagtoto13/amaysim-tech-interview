@@ -4,12 +4,12 @@
             "button_buy_now": "a:has-text('Buy now')"
         },
         "cart_page": {
-            "tab_new_number": "[data-testid='number-option-1']",
-            "radio_physical_sim": "input[value='USIM']",
+            "tab_new_number": "span.css-15xa8x:has-text('pick a new number')",
+            "radio_physical_sim": ".css-1ne7y3i",
             "button_checkout": "[data-testid='product-checkout-button']"
         },
         "your_details_page": {
-            "radio_new_to_amaysim": "[data-testid='existing-user-no']",
+            "radio_new_to_amaysim": "div.css-1cnc2pd:has-text(\"I'm new to amaysim\")",
             "input_firstname": "input[name='firstName']",
             "input_lastname": "input[name='lastName']",
             "input_dob": "input[name='dateOfBirth']",
@@ -18,6 +18,8 @@
             "input_number": "input[name='contactNumber']",
             "input_address": "input[placeholder='e.g 123 George St Sydney NSW 2000']",
             "option_address": "[role='option']",
+            "form_payment_cc": "form[id='amaysim-stripe-payment-element-form']",
+            "iframe_cc": "iframe[name*='__privateStripeFrame'][title='Secure payment input frame']",
             "button_credit_card": "[data-testid='card']",
             "input_card_number": "[name='number']",
             "input_expiry_date": "[name='expiry']",

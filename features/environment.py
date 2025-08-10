@@ -5,10 +5,10 @@ import os, json
 @fixture
 def browser(context):
     with sync_playwright() as p:
-        context.browser = p.chromium.launch(headless=True)
+        context.browser = p.chromium.launch(headless=False)
         context.page = context.browser.new_page()
-    
-    return context.page
+
+        yield context.page
 
 def before_all(context):
     context.base_url = os.getenv("AMAYSIM_BASE_URL", "https://www.amaysim.com.au/")
@@ -16,7 +16,7 @@ def before_all(context):
     context.test_data = get_test_data()
 
 def before_scenario(context, scenario):
-    context.page = browser(context)
+    use_fixture(browser, context)
 
 def after_scenario(context, scenario):
     context.page.close()

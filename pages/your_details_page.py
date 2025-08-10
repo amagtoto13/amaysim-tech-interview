@@ -1,8 +1,8 @@
 from pages.base_page import BasePage
 
 class YourDetailsPage(BasePage):
-    def __init__(self, page):
-        super().__init__(page)
+    def __init__(self, page, context):
+        super().__init__(page, context)
         self.page_name = 'your_details_page'
 
     def click_im_new_to_amaysim(self):
@@ -31,11 +31,13 @@ class YourDetailsPage(BasePage):
 
     def click_suggested_address(self, address):
         locator = self.get_locator(self.page_name, 'option_address')
-        address_locator = self.page.locator(locator).filter(has_text=address)
-        address_locator.click()
+        self.page.locator(locator).first.click()
 
     def click_credit_card_button(self):
-        self.click(self.page_name, 'button_credit_card')
+        form_locator = self.page.locator(self.get_locator(self.page_name, 'form_payment_cc')).wait_for()
+        iframe_locator = form_locator.locator(self.get_locator(self.page_name, 'iframe_cc')).wait_for()
+        iframe_element = iframe_locator.frame()
+        iframe_element.locator(self.get_locator(self.page_name, 'button_credit_card')).click()
 
     def type_cc_number(self, cc_number):
         self.type(self.page_name, 'input_card_number', cc_number)
